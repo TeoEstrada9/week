@@ -1,0 +1,15 @@
+.bottomNav {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    background-color: #003c71; 
+    color: white;
+    position: relative;
+    bottom: 9em;
+    padding: 7px 32px 7px 28px;
+    
+}
+.bottomNavItems {
+    margin-left: 1em;
+}

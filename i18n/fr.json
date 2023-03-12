@@ -1,6 +1,6 @@
 {
-    "page.home.head.title": "Exemple Next.js i18n", 
+    "page.home.head.title": "Clone BCIT", 
     "page.home.head.meta.description": "Exemple Next.js i18n - French",
-    "page.home.title": "Bienvenue sur la page d'accueil", 
+    "page.home.title": "Conception et développement numérique", 
     "page.home.description": "Vous consultez actuellement la page d'accueil en français"
 }
