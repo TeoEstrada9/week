@@ -9,6 +9,11 @@
     color: #003c71; 
     font-size: 15px;
 }
+.navItems:hover {
+    color: #296cf6;
+    border-bottom: 3px solid #fff400; 
+    cursor: pointer;
+}
 .input {
     padding: 15px 48px 15px 15px; 
     border: 1px solid #dcdcdc;

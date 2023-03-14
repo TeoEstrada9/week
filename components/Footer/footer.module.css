@@ -1,0 +1,79 @@
+.footer {
+    position: relative;
+    bottom: 97em;
+    left: 4em;
+}
+.contact {
+    color: #003c71; 
+    
+}
+.address {
+    color: #003c71;
+    font-size: 15px;
+    line-height: 2;
+}
+.phoneNumber {
+    color: #003c71;
+    font-size: 15px;
+    line-height: 2;
+    margin-top: 3em;
+}
+.bcitLink {
+    color: #296cf6; 
+    font-weight: bold;
+    font-size: 15px;
+}
+.contactNumbers {
+    color: #296cf6;
+    font-weight: bolder;
+}
+.visit {
+    display: flex;
+    flex-direction: row;
+}
+.listItems {
+    text-decoration: none;
+    list-style: none;
+    position: relative;
+    left: 28em;
+    bottom: 21em;
+    color: #296cf6;
+    line-height: 4;
+    position: relative;
+    border: 1px solid #f2f2f2;
+    padding: 46px 39px 34px;
+    
+}
+.newsItems {
+    color: #296cf6;
+    position: relative;
+    list-style: none;
+    line-height: 4;
+    bottom: 38em;
+    left: 50em;  
+}
+.campusInfo {
+    color: #003c71;
+}
+.campusLocations {
+    list-style: none;
+    color: #296cf6;
+    line-height: 2.5;
+    font-size: 18px;
+
+}
+.feedback {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    gap: 10px;
+    color: #296cf6;
+    font-size: 14px;
+    position: relative;
+}
+.campus {
+    position: relative;
+    bottom: 53em;
+    left: 65em;
+
+}

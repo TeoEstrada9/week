@@ -9,7 +9,7 @@
   position: relative;
   bottom: 20em;
   font-size: 45px;
-  z-index: 100;
+  z-index: -100;
 }
 .navigationMenu {
   display: flex;
@@ -20,6 +20,8 @@
   bottom: 50em;
   color: black;
   font-family: Arial, Helvetica, sans-serif;
+  z-index: -1;
+  
 }
 .applyNow {
     background: none;
@@ -75,7 +77,7 @@
   font-family: Arial, Helvetica, sans-serif;
   font-size: 18px;
   position: relative;
-  bottom: 95em;
+  bottom: 94em;
   left: 20.6em;
 }
 .programName:hover {
@@ -99,7 +101,7 @@
   color: #003c71;
   text-align: left;
   position: relative;
-  bottom: 46em;
+  bottom: 43em;
   left: 10.5em;
 
 }
@@ -108,7 +110,7 @@
   color: #003c71;
   font-family: Arial, Helvetica, sans-serif;
   position: relative;
-  bottom: 103em;
+  bottom: 96em;
   left: 23.5em;
   line-height: 1.25;
 }
@@ -117,7 +119,7 @@
   color: #003c71;
   font-family: Arial, Helvetica, sans-serif;
   position: relative;
-  bottom: 102em;
+  bottom: 95em;
   left: 23.5em;
 }
 .jobList {
@@ -125,7 +127,7 @@
   color: #003c71;
   font-size: 18px;
   position: relative;
-  bottom: 100em;
+  bottom: 94em;
   left: 22em;
   line-height: 2.5;
 }
@@ -134,7 +136,7 @@
   color: #767676;
   font-size: 32px;
   position: relative;
-  bottom: 55em;
+  bottom: 53em;
   left: 12em;
 }
 .gradEmployment {
@@ -142,7 +144,7 @@
   font-family: Arial, Helvetica, sans-serif;
   font-size: 18px;
   position: relative;
-  bottom: 98em;
+  bottom: 95em;
   left: 21em;
   line-height: 2.25;
 }
@@ -151,7 +153,7 @@
   font-family: Arial, Helvetica, sans-serif;
   color: #003c71;
   position: relative;
-  bottom: 97em;
+  bottom: 95em;
   left: 21em;
 }
 .studentOutcomes {
@@ -247,5 +249,69 @@
   bottom: 25em;
   left: 4.2em;
 }
+.programTitle {
+  color: #003C71;
+}
+.Mediaprograms {
+  color: #296cf6;
+  font-weight: bold;
+}
+.list {
+  position: relative;
+  right: 2.5em;
+  list-style: none;
+  bottom: 1em;
+  color: #003C71;
+  font-weight: bold;
+}
+.vistedPrograms {
+  position: relative;
+  bottom: 24.5em;
+  left: 4em;
+  color: #003C71;
+}
+.D3 {
+  color: #296cf6;
+}
+.FWSD {
+  color: #296cf6;
+}
+.CIT {
+  color: #296cf6;
+}
 
+/* Program Overview span fixes */
+
+.diploma {
+  color: #003C71;
+  font-weight: lighter;
+}
+.fullName {
+  color: #003C71;
+  font-weight: lighter;
+}
+.years {
+  color: #003C71;
+  font-weight: lighter;
+}
+.month {
+  color: #003C71;
+  font-weight: lighter;
+}
+.location {
+  color: #003C71;
+  font-weight: lighter;
+}
+.domesticMoney {
+  color: #296cf6;
+  font-weight: lighter;
+}
+.internationalMoney {
+  color: #296cf6;
+  font-weight: lighter;
+}
+.costEstimate {
+  color: #003C71;
+  font-weight: lighter;
+}
 

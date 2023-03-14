@@ -9,6 +9,7 @@ import { useRouter } from "next/router";
 import TopLinks from "@/components/topLinks/toplinks.js";
 import NavBar from "@/components/navbar";
 import BottomNav from "@/components/bottomNav/bottomNav";
+import Footer from "@/components/Footer/footer";
 
 const nunitoSans = Nunito_Sans({
   weight: ['400', '700'],
@@ -79,10 +80,7 @@ export default function Home({ dir }) {
         />
 
         <h1 />
-        <FormattedMessage
-          id="page.home.title"
-          values={{ b: (info) => <b>{info}</b> }}
-        />
+     
         <p className={styles.description}>
           <FormattedMessage id="page.home.description" />
         </p>
@@ -134,60 +132,60 @@ export default function Home({ dir }) {
           </p>
         </aside>
         <aside className={styles.programOverview}>
-            <h2>
-              Program <br/>
-              Overview
+            <h2 className={styles.programTitle}>
+              Program Overview
              </h2>
-            <ul>
+            <ul className={styles.list}>
                 <li>
-                    Credential: Diploma
+                    Credential: <span className={styles.diploma}>Diploma</span>
                 </li>
                 <li>
-                    Format: Full-Time
+                    Format: <span className={styles.fullName}>Full-Time</span> 
                 </li>
                 <li>
-                    Length: 2 years
+                    Length: <span className={styles.years}>2 years</span> 
                 </li>
                 <li>
-                    Start Date: September
+                    Start Date: <span className={styles.month}>September</span> 
                 </li>
                 <li>
-                    Campus: Burnaby
+                    Campus: <span className={styles.location}>Burnaby</span>
                 </li>
                 <li>
-                    Domestic Tuition: <br/> $18,000 
+                    Domestic Tuition: <span className={styles.domesticMoney}>$18,000</span>*
                 </li>
                 <li>
-                    International Tuition: <br/> 37,600 
+                    International Tuition: <span className={styles.internationalMoney}>$37,600</span>* <br/>
+                    <span className={styles.costEstimate}>*cost estimate</span>
                 </li>
             </ul>
-              <p>
-                  All Business + Media <br/>
+              <p className={styles.Mediaprograms}>
+                  All Business + Media 
                   Programs
               </p>
         </aside>
-       <aside>
+       <aside className={styles.vistedPrograms}>
             <h2>
               Recently <br/>
-              Visited <br/>
+              Visited 
               programs
               </h2>
               <p>
-                <span>
-                    Digital Design and <br/> 
+                <span className={styles.D3}>
+                    Digital Design and 
                     Development <br/>
                 </span>
                 Diploma
               </p>
               <p>
-                <span>
+                <span className={styles.FWSD}>
                    Full-Stack Web 
                    Development <br/>
                 </span>
                 Diploma
               </p>
               <p>
-                <span>
+                <span className={styles.CIT}>
                   Computer Information 
                   Technology <br/>
                 </span>
@@ -262,6 +260,8 @@ export default function Home({ dir }) {
 
           <p className={styles.disclamer}>Programs and courses are subject to change without notice.</p>
         </div>
+        <Footer/>
+
       </main>
     </>
   );
