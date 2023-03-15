@@ -4,20 +4,45 @@
     flex-direction: row;
     gap: 10px;
     text-decoration: none;
-    bottom: 3em;
-    width: 120%;
-    height: 35px;
+    /* bottom: 3em; */
+    /* width: 120%; */
+    /* height: 35px; */
     background-color: #003C71;
     color: white;
-    position: relative;
-    top: -4.4em;
+    /* position: relative; */
+    /* top: -4.4em; */
+    margin: 0;
   }
 .topLinksList {
     color: white;
     text-decoration: none;
-    position: relative;
-    top: 0.55em;
+    /* position: relative; */
+    /* top: 1em */;
     cursor: pointer;
-    left: 63em;
+    /* left: 63em; */
     font-size: 15px;
+    padding: 10px 5px;
+    display: block;
+
+}
+.topLinksList:hover {
+    background-color: #fff400; 
+    color: #003C71;
+}
+
+.topLinksContainer {
+    background-color: #003C71;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.localesContainer {
+  display: flex;
+  gap: 5px;
+}
+
+.localesContainer a {
+  color: white;
 }

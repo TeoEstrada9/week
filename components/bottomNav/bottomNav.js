@@ -1,17 +1,18 @@
 import styles from '@/components/bottomNav/bottomNav.module.css'
+import { FormattedMessage } from 'react-intl'
 export default function BottomNav() {
     return(
         <>
             <div>
                 <ul className={styles.bottomNav}>
                     <li className={styles.bottomNavItems}>
-                        Study 
+                        <FormattedMessage id="page.home.study"/>
                     </li>
-                    <li lassName={styles.bottomNavItems}>
-                        Business & Media 
+                    <li className={styles.bottomNavItems}>
+                        <FormattedMessage id="page.home.businessMedia"/>
                     </li>
-                    <li lassName={styles.bottomNavItems}>
-                        Digital Design and Development
+                    <li className={styles.bottomNavItems}>
+                        <FormattedMessage id="page.home.D3"/>
                     </li>
                 </ul>
             </div>

@@ -1,3 +1,10 @@
+:root {
+    --gray-border: 1px solid rgba(195, 195, 195, 0.491);
+}
 body {
     margin: 0;
+}
+ul {
+    margin: 0;
+    padding: 0;
 }

@@ -1,11 +1,17 @@
 import styles from '@/components/Footer/footer.module.css'
 import Link from 'next/link'
+import { FaFacebookF } from "react-icons/Fa";
+import { BsTwitter } from "react-icons/Bs";
+import { BsInstagram } from 'react-icons/Bs';
+import { FaLinkedinIn } from 'react-icons/Fa';
+import { FormattedMessage, useIntl } from "react-intl";
 export default function Footer() {
     return(
         <>
             <footer className={styles.footer}>
                 <div>
                     <h3 className={styles.contact}>
+                        
                         --- Contact
                     </h3>
                     <p className={styles.address}>
@@ -20,59 +26,81 @@ export default function Footer() {
                         434-1610 <br/>
                         <span className={styles.contactNumbers}>More contact numbers</span>
                     </p>
+                    <ul className={styles.footerMediaIcons}>
+                        <li>
+                        <FaFacebookF />
+                        </li>
+                        <li>
+                            <BsTwitter />
+                        </li>
+                        <li>
+                            <BsInstagram/>
+                        </li>
+                        <li>
+                            <FaLinkedinIn/>
+                        </li>
+                    </ul>
                 </div>
+             
 
                 <div className={styles.visit}>
                     <ul className={styles.listItems}>
-                        <li>Visit</li>
-                        <li>Apply Now</li>
-                        <li>Give</li>
+                        <li>
+                            <FormattedMessage id="page.home.visitFooter"/>
+                            </li>
+                        <li>
+                            <FormattedMessage id="page.home.aboutFooter"/>
+                            </li>
+                        <li>
+                            <FormattedMessage id="page.home.giveFooter"/>
+                            </li>
                     </ul>
                 </div>
 
                 <div>
                     <ul className={styles.newsItems}>
                         <li>
-                            News
+                            <FormattedMessage id="page.home.news"/>
                         </li>
                         <li>
-                            Events
+                            <FormattedMessage id="page.home.Events"/>
                         </li>
                         <li>
-                            Careers
+                            <FormattedMessage id="page.home.Careers"/>
+                            
                         </li>
                     </ul>
                 </div>
                 <div className={styles.campus}>
                     <h3 className={styles.campusInfo}>
-                        --- Campus Information
+                        <FormattedMessage id="pages.home.campusInfo"/>
                     </h3>
                     <ul className={styles.campusLocations}>
                         <li>
-                            Burnaby Campus
+                            <FormattedMessage id="page.home.burnaby"/>
                         </li>
                         <li>
-                            Downtown Campus
+                            <FormattedMessage id="page.home.downtown"/>
                         </li>
                         <li>
-                            Marine Campus
+                            <FormattedMessage id="page.home.marine"/>
                         </li>
                         <li>
-                            Aerospace Technology Campus
+                            <FormattedMessage id="page.home.aerospace"/>
                         </li>
                         <li>
-                            Annacis Island Campus
+                            <FormattedMessage id="page.home.annacis"/>
                         </li>
                     </ul>
                     <ul className={styles.feedback}>
                         <li>
-                            Feedback
+                            <FormattedMessage id="pages.home.feedbackFooter"/>
                         </li>
                         <li>
-                            Copyright
+                            <FormattedMessage id="pages.home.copyrightFooter"/>
                         </li>
                         <li>
-                            Privacy
+                            <FormattedMessage id="pages.home.privacy"/>
                         </li>
                     </ul>
                     

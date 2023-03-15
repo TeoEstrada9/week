@@ -10,11 +10,15 @@ import TopLinks from "@/components/topLinks/toplinks.js";
 import NavBar from "@/components/navbar";
 import BottomNav from "@/components/bottomNav/bottomNav";
 import Footer from "@/components/Footer/footer";
+import { BiPrinter } from "react-icons/Bi";
+import { AiOutlineMail } from "react-icons/Ai";
+import { FaFacebookF } from "react-icons/Fa";
+import { BsTwitter } from "react-icons/Bs";
 
 const nunitoSans = Nunito_Sans({
-  weight: ['400', '700'],
-  subsets: ['latin']
-})
+  weight: ["400", "700"],
+  subsets: ["latin"],
+});
 export default function Home({ dir }) {
   const { locales } = useRouter();
   const intl = useIntl();
@@ -35,233 +39,301 @@ export default function Home({ dir }) {
         <link rel="icon" href="/favicon.ico" hrefLang="en" />
         <link rel="icon" href="/favicon.ico" hrefLang="fr" />
       </Head>
-      <header className={nunitoSans.className}>
-        <div>
-          {[...locales].sort().map((locale) => (
-            <Link key={locale} href="/" locale={locale}>
-              <div>{locale}</div>
-            </Link>
-          ))}
-        </div>
+      <header className={`${nunitoSans.className} ${styles.header}`}>
+        <TopLinks className={styles.topLinks} locales={locales} />
+        <NavBar />
       </header>
       <main dir={dir} className={`${styles.main} ${nunitoSans.className}`}>
-        <TopLinks className={styles.topLinks}/>
+        <BottomNav className={styles.bottomNav} />
 
-        <Image className={styles.logo}
-          src={"/images/BCIT_logo.png"}
-          alt={"/images/BCIT_logo.png"}
-          width= {60}
-          height={60}
-        />
-        <NavBar/>
-        <BottomNav className={styles.bottomNav}/>
-      
-        <h1 className={styles.title}>Digital Design and <br/>
-            Development
-        </h1>
-        <ul className={styles.navigationMenu}>
-            <li>
-                Diploma  / 
-            </li>
-            <li>
-                Full-Time  / 
-            </li>
-            <li>
-                School of Business + Media 
-            </li>
-        </ul>
-        <button className={styles.applyNow}>Apply Now</button>
-        <button className={styles.contactUs}>Contact Us</button>
-        <Image className={styles.mainImage}
-          src={"/Images/mainImage.jpeg"}
-          alt={"/Images/mainImage.jpg"}
-          width={1492}
-          height={496}
-        />
+        <div className={styles.heroCard}>
+          <div className={styles.heroContent}>
+            <div className={styles.heroContentLeft}>
+              <h1 className={styles.title}>
+                <FormattedMessage id="page.home.D3Title" />
+              </h1>
+              <ul className={styles.navigationMenu}>
+                <li>
+                  <FormattedMessage id="page.home.diploma" /> /
+                </li>
+                <li>
+                  <FormattedMessage id="page.home.fullTime" /> /
+                </li>
+                <li>
+                  <FormattedMessage id="page.home.navMenu3" />
+                </li>
+              </ul>
+              <ul className={styles.iconsList}>
+                <li>
+                  <BiPrinter />
+                </li>
+                <li>
+                  <AiOutlineMail />
+                </li>
+                <li>
+                  <FaFacebookF />
+                </li>
+                <li>
+                  <BsTwitter />
+                </li>
+              </ul>
+            </div>
+            <div className={styles.heroContentRight}>
+              <button className={styles.heroButton}>
+                <FormattedMessage id="page.home.applyButton" />
+              </button>
 
-        <h1 />
-     
+              <button className={styles.heroButton}>
+                <FormattedMessage id="page.home.contact" />
+              </button>
+            </div>
+          </div>
+          <Image
+            className={styles.mainImage}
+            src={"/Images/mainImage.jpeg"}
+            alt={"/Images/mainImage.jpg"}
+            width={1492}
+            height={496}
+          />
+        </div>
+
         <p className={styles.description}>
           <FormattedMessage id="page.home.description" />
         </p>
-        {/* About this program section  */}
-        <aside className={styles.aboutprogram}>
-          <h3 className={styles.aboutProgram}>
-              ABOUT THIS <br/> 
-              PROGRAM
-          </h3>
-          <Link className={styles.programList} href="/">Overview</Link> <br/>
-          <Link className={styles.programList} href="/">Entrace Requirements</Link> <br/>
-          <Link className={styles.programList} href="/">Advanced Placement</Link> <br/>
-          <Link className={styles.programList} href="/">Costs & Supplies</Link> <br/>
-          <Link className={styles.programList} href="/">Courses</Link> <br/>
-          <Link className={styles.programList} href="/">Program Details</Link> <br/>
-          <Link className={styles.jobsList} href="/">Graduating & Jobs</Link> <br/>
-          <Link className={styles.programList} href="/">Contact Us</Link> <br/>
-          <Link className={styles.programList} href="/">Subscribe</Link> <br/>
-        </aside>
-        <aside className={styles.infoSection}>
-          <h2 className={styles.infoTitle}>
-            Info 
-            Sessions
-            </h2>
-          <p className={styles.infoDescription}>
-            Attend an upcoming <br />
-            information session for <br />
-            this program:
-          </p>
-
-          <ul className={styles.dateList}>
-              <li className={styles.dates}>
-                  April 3rd at 5:30pm
-              </li>
-              <li className={styles.dates}>
-                  May 8th at 5:30pm 
-              </li>
-              <li className={styles.dates}>
-                  June 19th at 5:30pm 
-              </li>
-              <li className={styles.dates}>
-                  July 10th at 5:30pm
-              </li>
-          </ul>
-
-          <p className={styles.bcitInfo}>
-              Explore all the upcoming <br/>
-              <span className={styles.bcitSessions}>BCIT info sessions </span>
-          </p>
-        </aside>
-        <aside className={styles.programOverview}>
-            <h2 className={styles.programTitle}>
-              Program Overview
-             </h2>
-            <ul className={styles.list}>
-                <li>
-                    Credential: <span className={styles.diploma}>Diploma</span>
-                </li>
-                <li>
-                    Format: <span className={styles.fullName}>Full-Time</span> 
-                </li>
-                <li>
-                    Length: <span className={styles.years}>2 years</span> 
-                </li>
-                <li>
-                    Start Date: <span className={styles.month}>September</span> 
-                </li>
-                <li>
-                    Campus: <span className={styles.location}>Burnaby</span>
-                </li>
-                <li>
-                    Domestic Tuition: <span className={styles.domesticMoney}>$18,000</span>*
-                </li>
-                <li>
-                    International Tuition: <span className={styles.internationalMoney}>$37,600</span>* <br/>
-                    <span className={styles.costEstimate}>*cost estimate</span>
-                </li>
-            </ul>
-              <p className={styles.Mediaprograms}>
-                  All Business + Media 
-                  Programs
+        <section className={styles.mainContent}>
+          <aside>
+            {/* About this program section  */}
+              <h3 className={styles.aboutProgram}>
+                <FormattedMessage id="page.home.aboutProramSidebar" />
+              </h3>
+            <section className={styles.aboutprogram}>
+              <Link className={styles.programList} href="/">
+                <FormattedMessage id="page.home.programsListOverview" />
+              </Link>{" "}
+              <br />
+              <Link className={styles.programList} href="/">
+                <FormattedMessage id="page.home.programsListEntrance" />
+              </Link>{" "}
+              <br />
+              <Link className={styles.programList} href="/">
+                <FormattedMessage id="page.home.programsListAdvanced" />
+              </Link>{" "}
+              <br />
+              <Link className={styles.programList} href="/">
+                <FormattedMessage id="page.home.programsListCosts" />
+              </Link>{" "}
+              <br />
+              <Link className={styles.programList} href="/">
+                <FormattedMessage id="page.home.programsListCourses" />
+              </Link>{" "}
+              <br />
+              <Link className={styles.programList} href="/">
+                <FormattedMessage id="page.home.programsListDetails" />
+              </Link>{" "}
+              <br />
+              <Link className={styles.jobsList} href="/">
+                <FormattedMessage id="page.home.programsListGrad" />
+              </Link>{" "}
+              <br />
+              <Link className={styles.programList} href="/">
+                <FormattedMessage id="page.home.contact" />
+              </Link>{" "}
+              <br />
+              <Link className={styles.programList} href="/">
+                <FormattedMessage id="page.home.programsListSubscribe" />
+              </Link>{" "}
+              <br />
+            </section>
+            <section className={styles.infoSection}>
+              <h2 className={styles.infoTitle}>
+                <FormattedMessage id="page.home.InfoSessions" />
+              </h2>
+              <p className={styles.infoDescription}>
+                <FormattedMessage id="page.home.attendSessions" />
               </p>
-        </aside>
-       <aside className={styles.vistedPrograms}>
-            <h2>
-              Recently <br/>
-              Visited 
-              programs
+              <ul className={styles.dateList}>
+                <li className={styles.dates}>
+                  <FormattedMessage id="page.home.dates1" />
+                </li>
+                <li className={styles.dates}>
+                  <FormattedMessage id="page.home.date2" />
+                </li>
+                <li className={styles.dates}>
+                  <FormattedMessage id="page.home.date3"/>
+                </li>
+              </ul>
+              <p className={styles.bcitInfo}>
+                <FormattedMessage id="page.home.exploreOptions"/> <br/>
+                <span className={styles.bcitSessions}>
+                  <FormattedMessage id="page.home.infoHyperLink"/>
+                  </span>
+              </p>
+            </section>
+            <section className={styles.programOverview}>
+              <h2 className={styles.programTitle}>
+                <FormattedMessage id="page.home.overview" />
+              </h2>
+              <ul className={styles.list}>
+                <li>
+                  Credential:{" "}
+                  <span className={styles.diploma}>
+                    <FormattedMessage id="page.home.diploma" />
+                  </span>
+                </li>
+                <li>
+                  Format:{" "}
+                  <span className={styles.fullName}>
+                    <FormattedMessage id="page.home.fullTime" />
+                  </span>
+                </li>
+                <li>
+                  Length: <span className={styles.years}>2 years</span>
+                </li>
+                <li>
+                  Start Date: <span className={styles.month}>September</span>
+                </li>
+                <li>
+                  Campus: <span className={styles.location}>Burnaby</span>
+                </li>
+                <li>
+                  Domestic Tuition:{" "}
+                  <span className={styles.domesticMoney}>$18,000</span>*
+                </li>
+                <li>
+                  International Tuition:{" "}
+                  <span className={styles.internationalMoney}>$37,600</span>*{" "}
+                  <br />
+                  <span className={styles.costEstimate}>*cost estimate</span>
+                </li>
+              </ul>
+              <p className={styles.Mediaprograms}>
+                <FormattedMessage id="page.home.mediaPrograms"/>
+              </p>
+            </section>
+            <section className={styles.vistedPrograms}>
+              <h2>
+                <FormattedMessage id="page.home.recentlyVisited" />
               </h2>
               <p>
                 <span className={styles.D3}>
-                    Digital Design and 
-                    Development <br/>
+                  <FormattedMessage id="page.home.D3Footer"/> <br/>
                 </span>
-                Diploma
+                <FormattedMessage id="page.home.diploma1"/>
+           
               </p>
               <p>
                 <span className={styles.FWSD}>
-                   Full-Stack Web 
-                   Development <br/>
+                  <FormattedMessage id="page.home.FWSD"/> <br/>
                 </span>
-                Diploma
+                <FormattedMessage id="page.home.diploma1"/>
               </p>
               <p>
                 <span className={styles.CIT}>
-                  Computer Information 
-                  Technology <br/>
+                  <FormattedMessage id="page.home.CIT"/> <br/>
                 </span>
-                Diploma
+                <FormattedMessage id="page.home.diploma1"/>
               </p>
-       </aside>
-        <h2 className={styles.gradJobs}>Graduating & Jobs</h2>
-        <p className={styles.description}>
-          Graduates have a variety of digital media skills that can lead them to
-          various <br />
-          content design and development jobs with digital media production
-          studios, <br />
-          advertising companies, design firms, and web and mobile app
-          developers. <br />
-          Graduates may also have opportunities to be part of a team that
-          creates games, <br />
-          digital animations, and dynamic content.
-        </p>
-        <p className={styles.jobOppro}>Job Opportunities:</p>
-        <ul className={styles.jobList}>
-          <li>Mobile and Web Content Artist</li>
-          <li>Internet Marketing Coordinator</li>
-          <li>Digital Media Coordinator</li>
-          <li>Web and Mobile Developer</li>
-          <li>Interface Desinger</li>
-          <li>Game User Interface Desinger</li>
-          <li>Project Manager</li>
-          <li>Digital Media Manager</li>
-          <li>Digital Media Producer</li>
-          <li>Web Development Manager</li>
-          <li>Dynamic Media Designer</li>
-          <li>Digital Media Producer Designer</li>
-        </ul>
+            </section>
+          </aside>
+          <article className={styles.mainArticle}>
+            <h2 className={styles.gradJobs}>
+              <FormattedMessage id="page.home.programsListGrad" />
+            </h2>
+            <p className={styles.description}>
+              <FormattedMessage id="page.home.gradJobs" />
+            </p>
+            <p className={styles.jobOppro}>
+              <FormattedMessage id="page.home.jobOppro"/>
+              </p>
+            <ul className={styles.jobList}>
+              <li>
+                <FormattedMessage id="page.home.jobList1"/>
+              </li>
+              <li>
+                  <FormattedMessage id="page.home.jobList2"/>
+                </li>
+              <li>
+                <FormattedMessage id="page.home.jobList3"/>
+                </li>
+              <li>
+                  <FormattedMessage id="page.home.jobList4"/>
+              </li>
+              <li>
+                <FormattedMessage id="page.home.jobList5"/>
+                </li>
+              <li>
+                <FormattedMessage id="page.home.jobList6"/>
+              </li>
+              <li>
+                <FormattedMessage id="page.home.jobList7"/>
+                </li>
+              <li>
+                <FormattedMessage id="page.home.jobList8"/>
+                </li>
+              <li>
+                <FormattedMessage id="page.home.jobList9"/>
+                </li>
+              <li>
+                 <FormattedMessage id="page.home.jobList10"/>
+              </li>
+              <li>
+                <FormattedMessage id="page.home.jobList11"/>
+                </li>
+              <li>
+                <FormattedMessage id="page.home.jobList12"/>
+                </li>
+            </ul>
 
-        <div>
-          <h3 className={styles.gradOutcomes}>Graduate Employment Outcomes</h3>
+            <div>
+              <h3 className={styles.gradOutcomes}>
+                <FormattedMessage id="page.home.gradOutcomes"/>
+              </h3>
 
-          <p className={styles.gradEmployment}>
-            The BCIT student outcomes report presents summary findings from the
-            annual survey of former students administered <br />
-            by BC Stats one to two years after graduation. These reports combine
-            the last three years of available results for the <br />
-            2020-2022 BCIT Outcomes Surveys of 2019-2021 graduates and for
-            Degree 2017-2019 graduates. The reports are <br />
-            organized into three-page summaries containing information on
-            graduates labour market experiences and opinions <br />
-            regarding their education. More detailed information can be accessed
-            at the <Link className={styles.studentOutcomes} href="/">BC Student Outcomes website.</Link>
-          </p>
+              <p className={styles.gradEmployment}>
+                <FormattedMessage id="page.home.gradDescription"/>
+                <Link className={styles.studentOutcomes} href="/">
+                  <FormattedMessage id="page.home.BCITWebsite"/>
+                </Link>
+              </p>
 
-          <p className={styles.resultsText}>
-            To view these results, you may need to have the{" "}
-            <Link className={styles.adobeLink} href="/">Adobe Acrobat Reader</Link> installed in your Web
-            browser.
-          </p>
+              <p className={styles.resultsText}>
+                To view these results, you may need to have the{" "}
+                <Link className={styles.adobeLink} href="/">
 
-          <ul>
-            <li className={styles.programName}>
-              Digital Design and Development
-            </li>
-          </ul>
-          <ul className={styles.pageNav}>
-            <li className={styles.goBack}>
-              Go back <br />
-              <Link className={styles.program} href="/">PROGRAM DETAILS</Link>
-            </li>
-            <li className={styles.nextUp}>
-              Next up <br />
-              <Link className={styles.contact} href="/"> CONTACT US</Link>
-            </li>
-          </ul>
+                  Adobe Acrobat Reader
+                </Link>{" "}
+                installed in your Web browser.
+              </p>
 
-          <p className={styles.disclamer}>Programs and courses are subject to change without notice.</p>
-        </div>
-        <Footer/>
+              <ul>
+                <li className={styles.programName}>
+                  <FormattedMessage id="page.home.D3Link"/>
+                </li>
+              </ul>
+              <ul className={styles.pageNav}>
+                <li className={styles.goBack}>
+                  <FormattedMessage id="page.home.goBack"/> <br/>
+                  <Link className={styles.program} href="/">
+                    <FormattedMessage id="page.home.programDetails"/>
+                  </Link>
+                </li>
+              <ul className={styles.next}>
+                <li className={styles.nextUp}>
+                  <FormattedMessage id="page.home.nextUp"/> <br/>
+                  <Link className={styles.contact} href="/">
+                    <FormattedMessage id="page.home.contactUS"/>
+                  </Link>
+                </li>
+              </ul>
+              </ul>
 
+              <p className={styles.disclamer}>
+                <FormattedMessage id="page.home.disclaimer"/>
+              </p>
+            </div>
+          </article>
+        </section>
+        <Footer />
       </main>
     </>
   );

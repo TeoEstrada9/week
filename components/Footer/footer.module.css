@@ -1,8 +1,33 @@
 .footer {
-    position: relative;
-    bottom: 97em;
-    left: 4em;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-left: var(--gray-border);
+    border-right: var(--gray-border);
 }
+
+@media screen and (max-width: 970px) {
+   .footer {
+    grid-template-columns: 1fr;
+    padding: 0 10px;
+   }
+   .footer > div {
+    grid-column: 1;
+    border-bottom: var(--gray-border);
+    border-left: var(--gray-border);
+    border-right: var(--gray-border);
+    border-top: none;
+   }
+   }
+
+.footer > div {
+    padding: 1rem;
+    border-right: var(--gray-border);
+}
+
+.footer:last-child {
+    border: none;
+}
+
 .contact {
     color: #003c71; 
     
@@ -27,26 +52,23 @@
     color: #296cf6;
     font-weight: bolder;
 }
-.visit {
-    display: flex;
-    flex-direction: row;
-}
+
 .listItems {
     text-decoration: none;
     list-style: none;
-    position: relative;
+    /* position: relative; */
     left: 28em;
     bottom: 21em;
     color: #296cf6;
     line-height: 4;
-    position: relative;
-    border: 1px solid #f2f2f2;
+    /* position: relative; */
+    /* border: 1px solid #f2f2f2; */
     padding: 46px 39px 34px;
     
 }
 .newsItems {
     color: #296cf6;
-    position: relative;
+    /* position: relative; */
     list-style: none;
     line-height: 4;
     bottom: 38em;
@@ -69,11 +91,19 @@
     gap: 10px;
     color: #296cf6;
     font-size: 14px;
-    position: relative;
+    /* position: relative; */
 }
 .campus {
-    position: relative;
+    /* position: relative; */
     bottom: 53em;
     left: 65em;
 
+}
+.footerMediaIcons {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    color: #003c71;
+    font-size: 25px;
 }

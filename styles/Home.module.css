@@ -1,43 +1,145 @@
+/* Hero Card Styles */
+.heroCard {
+  width: 100vw;
+  position: relative;
+}
+
+.heroCard img {
+  object-fit: cover;
+  width: 100%;
+}
+
+.heroContent {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  padding: 0 40px;
+  justify-content: space-between;
+}
+
+.heroContentLeft {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  gap: 15px;
+}
+
+.heroContentRight {
+  width: 30%;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  margin-bottom: 4rem;
+  gap: 30px;
+}
+
+/* Main Content Styles */
+
+.mainContent {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* Aside Styles */
+
+.mainContent aside {
+  grid-column: 1/2;
+  border: var(--gray-border);
+}
+
+/* Main Article Styles */
+
+.mainContent article {
+  grid-column: 2/5;
+  padding-left: 4rem;
+  border-right: var(--gray-border);
+  border-bottom: var(--gray-border);
+}
+
+@media screen and (max-width: 970px) {
+  .mainContent {
+    grid-template-columns: 1fr;
+    padding: 0 10px;
+  }
+
+  .mainContent aside {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .mainContent article {
+    grid-column: 1;
+    padding-left: 0;
+    grid-row: 1;
+  }
+}
+
+/* Course Description Styles */
+
 .description {
   font-size: 18px;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 400px;
 }
 .title {
-  color: black;
   font-family: Arial, Helvetica, sans-serif;
-  position: relative;
+  /* position: relative; */
   bottom: 20em;
   font-size: 45px;
   z-index: -100;
+  margin: 0;
+
+  /* outline: 1px black; */
+  -webkit-text-stroke: 0.5px black;
 }
 .navigationMenu {
   display: flex;
   flex-direction: row;
   gap: 10px;
   list-style: none;
-  position: relative;
+  /* position: relative; */
   bottom: 50em;
-  color: black;
   font-family: Arial, Helvetica, sans-serif;
   z-index: -1;
-  
+  padding: 0;
 }
-.applyNow {
-    background: none;
-    border: 1px solid white; 
-    font-family: Arial, Helvetica, sans-serif;
-    position: relative;
-    top: 10em; 
-    color: black;
-    padding: 1em 3em;
-    
+.heroButton {
+  background: none;
+  border: 1px solid white;
+  font-family: Arial, Helvetica, sans-serif;
+  /* position: relative; */
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+  font-weight: 600;
+  top: 10em;
+  color: white;
+  padding: 2em 1em;
+  transition: all 0.15s ease-in-out;
+  cursor: pointer;
+  max-width: 300px;
 }
+
+.heroButton::after {
+  content: "→";
+}
+.heroButton:hover {
+  background: #296cf6;
+  border: none;
+}
+
 .program {
   border-bottom: 3px solid #fff400;
   text-decoration: none;
   font-family: Arial, Helvetica, sans-serif;
-  color: #003c71; 
+  color: #003c71;
+  
 }
 .program:hover {
   border-bottom: 3px solid #003c71;
@@ -47,11 +149,17 @@
   border-bottom: 3px solid #fff400;
   text-decoration: none;
   font-family: Arial, Helvetica, sans-serif;
-  color: #003c71; 
+  color: #003c71;
+  
 }
 .contact:hover {
   border-bottom: 3px solid #003c71;
   cursor: pointer;
+}
+.next {
+  position: relative;
+  left: 50em;
+  bottom: 2em;
 }
 
 .goBack {
@@ -76,9 +184,10 @@
   width: 20%;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 18px;
-  position: relative;
+  /* position: relative; */
   bottom: 94em;
   left: 20.6em;
+  margin-bottom: 1em;
 }
 .programName:hover {
   border-bottom: 3px solid #003c71;
@@ -100,16 +209,15 @@
   font-family: Arial, Helvetica, sans-serif;
   color: #003c71;
   text-align: left;
-  position: relative;
+  /* position: relative; */
   bottom: 43em;
   left: 10.5em;
-
 }
 .description {
   font-size: 18px;
   color: #003c71;
   font-family: Arial, Helvetica, sans-serif;
-  position: relative;
+  /* position: relative; */
   bottom: 96em;
   left: 23.5em;
   line-height: 1.25;
@@ -118,7 +226,7 @@
   font-size: 18px;
   color: #003c71;
   font-family: Arial, Helvetica, sans-serif;
-  position: relative;
+  /* position: relative; */
   bottom: 95em;
   left: 23.5em;
 }
@@ -126,7 +234,7 @@
   font-family: Arial, Helvetica, sans-serif;
   color: #003c71;
   font-size: 18px;
-  position: relative;
+  /* position: relative; */
   bottom: 94em;
   left: 22em;
   line-height: 2.5;
@@ -135,7 +243,7 @@
   font-family: arial;
   color: #767676;
   font-size: 32px;
-  position: relative;
+  /* position: relative; */
   bottom: 53em;
   left: 12em;
 }
@@ -143,7 +251,7 @@
   color: #003c71;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 18px;
-  position: relative;
+  /* position: relative; */
   bottom: 95em;
   left: 21em;
   line-height: 2.25;
@@ -152,7 +260,7 @@
   font-size: 18px;
   font-family: Arial, Helvetica, sans-serif;
   color: #003c71;
-  position: relative;
+  /* position: relative; */
   bottom: 95em;
   left: 21em;
 }
@@ -160,7 +268,7 @@
   border-bottom: 3px solid #fff400;
   text-decoration: none;
   font-family: Arial, Helvetica, sans-serif;
-  color: #296cf6; 
+  color: #296cf6;
 }
 .studentOutcomes:hover {
   border-bottom: 3px solid #003c71;
@@ -171,104 +279,111 @@
   font-size: 16px;
   text-decoration: none;
   font-family: Arial, Helvetica, sans-serif;
+  padding: 1rem;
 }
 .programList:hover {
   color: #296cf6;
 }
 .jobsList {
-    color: #296cf6;
-    font-size: 16px;
-    font-weight: lighter;
-    font-family: Arial, Helvetica, sans-serif;
-    text-decoration: none;
+  color: #296cf6;
+  font-size: 16px;
+  font-weight: lighter;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  padding: 1rem;
 }
 .aboutProgram {
-  color: #003C71;
+  color: #003c71;
   font-size: 18px;
   font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 1rem;
+  border-bottom: var(--gray-border);
 }
 .logo {
-  position: relative;
+  /* position: relative; */
   bottom: 3.4em;
   left: 5em;
 }
 .mainImage {
-  position: relative;
+  /* position: relative; */
   bottom: 24.2em;
   right: 1em;
 }
 .aboutprogram {
-  position: relative;
+  /* position: relative; */
   bottom: 28em;
   left: 5em;
   line-height: 2;
+  border-bottom: var(--gray-border);
+  padding: 1rem 0;
 }
 .pageNav {
-  position: relative;
+  /* position: relative; */
   bottom: 104em;
   left: 21.5em;
 }
 .nextUp {
-  position: relative;
+  /* position: relative; */
   left: 53em;
   bottom: 1.9em;
 }
 .disclamer {
-  position: relative;
+  /* position: relative; */
   bottom: 115em;
   left: 11.5em;
   font-weight: bolder;
 }
-.infoSection {
-  position: relative;
-  bottom: 26em;
-  left: 4.5em;
+.infoSection,
+.programOverview,
+.vistedPrograms {
+  padding: 1rem;
 }
 .infoTitle {
   color: #003c71;
 }
 .infoDescription {
   font-size: 16px;
-  color: #003C71;
+  color: #003c71;
 }
 .dateList {
   color: #296cf6;
   line-height: 1.75;
-  position: relative;
+  /* position: relative; */
   right: 1.6em;
 }
 
 .bcitInfo {
-  color: #003C71;
+  color: #003c71;
 }
 .bcitSessions {
   color: #296cf6;
 }
 .programOverview {
-  position: relative;
+  /* position: relative; */
   bottom: 25em;
   left: 4.2em;
 }
 .programTitle {
-  color: #003C71;
+  color: #003c71;
 }
 .Mediaprograms {
   color: #296cf6;
   font-weight: bold;
 }
 .list {
-  position: relative;
+  /* position: relative; */
   right: 2.5em;
   list-style: none;
   bottom: 1em;
-  color: #003C71;
+  color: #003c71;
   font-weight: bold;
 }
 .vistedPrograms {
-  position: relative;
+  /* position: relative; */
   bottom: 24.5em;
   left: 4em;
-  color: #003C71;
+  color: #003c71;
 }
 .D3 {
   color: #296cf6;
@@ -283,23 +398,23 @@
 /* Program Overview span fixes */
 
 .diploma {
-  color: #003C71;
+  color: #003c71;
   font-weight: lighter;
 }
 .fullName {
-  color: #003C71;
+  color: #003c71;
   font-weight: lighter;
 }
 .years {
-  color: #003C71;
+  color: #003c71;
   font-weight: lighter;
 }
 .month {
-  color: #003C71;
+  color: #003c71;
   font-weight: lighter;
 }
 .location {
-  color: #003C71;
+  color: #003c71;
   font-weight: lighter;
 }
 .domesticMoney {
@@ -311,7 +426,19 @@
   font-weight: lighter;
 }
 .costEstimate {
-  color: #003C71;
+  color: #003c71;
   font-weight: lighter;
 }
 
+/* .header {
+  
+} */
+
+.iconsList {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  font-size: 30px;
+  font-weight: 400;
+}

@@ -5,11 +5,32 @@
     gap: 10px;
     background-color: #003c71; 
     color: white;
-    position: relative;
+    /* position: relative; */
     bottom: 9em;
     padding: 7px 32px 7px 28px;
     
 }
 .bottomNavItems {
     margin-left: 1em;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.bottomNavItems::after {
+    /* content: "\e905";
+    display: inline-block;
+    font-size: 6px;
+    height: 0;
+    line-height: 1;
+    position: absolute;
+    right: 5px;
+    top: 13px;
+    width: 0; */
+    content: "▶";
+    font-size: 10px;
+}
+
+.bottomNavItems:last-child::after {
+    content: unset;
 }
